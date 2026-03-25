@@ -117,3 +117,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+import os
+
+# ... busca donde diga STATIC_URL y añade esto debajo:
+STATIC_URL = 'static/'
+
+# Esto es lo que falta y pide el PDF:
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Y la configuración de WhiteNoise que instalamos:
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
